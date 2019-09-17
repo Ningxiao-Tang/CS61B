@@ -1,3 +1,2 @@
-# my cs61b code
+## My cs61b code
 
-Good luck!
