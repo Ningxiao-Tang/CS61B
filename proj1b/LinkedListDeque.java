@@ -1,4 +1,4 @@
-public class LinkedListDeque <T>{
+public class LinkedListDeque<T> implements Deque<T>{
     // "desk" double-ended queue
     private class Node {
         public T item;
@@ -20,26 +20,29 @@ public class LinkedListDeque <T>{
         size = 0;
     }
     /* last = sentinel.prev */
+    @Override
     public void addFirst(T item){
         sentinel.next = new Node(item, sentinel, sentinel.next);
         sentinel.next.next.prev = sentinel.next;
         size +=1;
     }
+    @Override
     public void addLast(T item){
         sentinel.prev = new Node(item, sentinel.prev,sentinel);
         sentinel.prev.prev.next = sentinel.prev;
         size += 1;
     }
+    @Override
     public boolean isEmpty(){
         if (sentinel.next == sentinel)
             return true;
         return false;
     }
-
+    @Override
     public int size(){
         return size;
     }
-
+    @Override
     public void printDeque(){
         Node p = sentinel.next;
         for (int i = 0; i < size; i++) {
@@ -47,7 +50,7 @@ public class LinkedListDeque <T>{
             p = p.next;
         }
     }
-
+    @Override
     public T removeFirst(){
         if(sentinel.next != null ){
             T item = sentinel.next.item;
@@ -57,7 +60,7 @@ public class LinkedListDeque <T>{
         }
         return null;
     }
-
+    @Override
     public T removeLast(){
         if (sentinel.next != null){
             T item = sentinel.prev.item;
@@ -67,7 +70,7 @@ public class LinkedListDeque <T>{
         }
         return null;
     }
-
+    @Override
     public T get(int index){
         Node p = sentinel;
         if (index > size)
