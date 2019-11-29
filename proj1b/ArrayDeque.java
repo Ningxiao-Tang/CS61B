@@ -36,9 +36,7 @@ public class ArrayDeque<T> implements Deque<T> {
     }
     @Override
     public boolean isEmpty(){
-        if (last - first == 1)
-            return true;
-        return false;
+        return last - first == 1;
     }
     @Override
     public int size(){
