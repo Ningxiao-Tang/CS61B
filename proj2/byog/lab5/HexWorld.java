@@ -16,7 +16,7 @@ public class HexWorld {
     private static final int WIDTH = 45;
     private static final int HEIGHT = 45;
 
-    private static final long SEED = 2873123;
+    private static final long SEED = 1234567;
     private static final Random RANDOM = new Random(SEED);
     private static class Position {
         private int x;
@@ -114,7 +114,7 @@ public class HexWorld {
             case 1: return Tileset.FLOWER;
             case 2: return Tileset.GRASS;
             case 3: return Tileset.MOUNTAIN;
-            case 4: return Tileset.SAND;
+            case 4: return Tileset.TREE;
             default: return Tileset.NOTHING;
         }
     }
